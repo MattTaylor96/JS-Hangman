@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hangman</title>
+</head>
+<body>
+	<style type="text/css">
+		body{
+			font-family: Arial;
+			margin: 0;
+		}
+		h1{
+			font-size: 38px;
+			text-align: center;
+		}
+		.container{
+			background-color: #f4f4f4;
+			margin: auto;
+			min-height: 70vh;
+			padding: 30px;
+			width: 80%;
+		}
+		.user-inputs{
+			display: flex;
+			justify-content: center;
+		}
+		.game-info{
+			font-size: 20px;
+			margin: 5px 0;
+			text-align: center;
+		}
+		.hidden{
+			display: none;
+		}
+		.config-options{
+			border: solid 1px #ccc;
+			font-size: 24px;
+			margin: 10px 0;
+			text-align: center;
+			width: 100%;
+		}
+		#user-guess{
+			font-size: 24px;
+			height: 50px;
+			min-width: 400px;
+			text-align: center;
+		}
+		#submit-guess{
+			font-size: 24px;
+		}
+		#game-word{
+			font-size: 24px;
+			text-align: center;
+		}
+		#game-settings{
+			max-width: 50%;
+		}
+		#confirm-settings{
+			background-color: #27ae60;
+			transition: 0.5s;
+		}
+		#confirm-settings:hover{
+			background-color: #f1f1f1;
+			cursor: pointer;
+			transition: 0.5s;
+		}
+		#submit-guess:hover{
+			cursor: pointer;
+		}
+		#game-word{
+			font-size: 24px;
+		}
+	</style>
+
+	<div class="container" id="game-settings">
+		<input type="number" class="config-options" id="word-length" placeholder="Max Word Length" min="3" max="20">
+		<select type="text" class="config-options" id="difficulty" placeholder="Difficulty Level">
+			<option value="E">Please Select</option>
+			<option value="E">Easy (7 Lives)</option>
+			<option value="M">Medium (5 Lives)</option>
+			<option value="H">Hard (3 Lives)</option>
+		</select>
+		<button type="button" class="config-options" id="confirm-settings">Start Game</button>
+	</div>
+
+	<div class="container hidden" id="game-container">
+		<div class="game-header">
+			<h1></h1>
+		</div>
+		<div class="game-content">
+			<div id="current-state"></div>
+			<div class="user-inputs">
+				<input type="text" placeholder="Please Enter Your Guess" id="user-guess">
+				<button type="button" id="submit-guess">Submit Guess</button>
+			</div>
+			<div id="previous-guesses"></div>
+		</div>
+		<div class="game-footer" id="game-info">
+
+		</div>
+	</div>
+	<script type="text/javascript" src="main.js"></script>
+</body>
+</html>
